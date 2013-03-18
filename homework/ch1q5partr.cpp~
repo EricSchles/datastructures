@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+struct S
+{
+
+  int a;
+  S *b;
+};
+
+int main()
+{
+
+
+  vector<S *> u(10);
+
+  *u[2];
+
+
+  return 0;
+}

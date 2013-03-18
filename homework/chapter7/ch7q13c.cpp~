@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+template<class Object>
+class Collection
+{
+
+public:
+  virtual ~Collection( ) {}
+
+  virtual insert( const Object & x );
+  virtual remove( const Object & x );
+  virtual Cref<Object> find(const Object & x ) const;
+  
+  virtual bool isEmpty( ) const;
+  virtual void makeEmpty( );
+
+};

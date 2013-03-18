@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+
+int binary( int* n, int begin,int end, int search )
+{
+
+  int mid = (end - begin)/2;
+  cout << mid;
+  if( mid == search)
+    return mid;
+  
+    
+  if( n[mid] < search)
+    return binary(n, begin , mid - 1 , search);
+  else 
+    return binary(n, mid, end, search);
+  
+  
+
+ 
+}
+int main()
+{
+  
+  int size = 10;
+  int x[6];
+  for(int i = 0; i < size; i++)
+    x[i] = i;
+  cout <<endl;
+  binary(x, 0, size-1 ,4);
+  cout <<endl;
+  
+  return 0;
+}

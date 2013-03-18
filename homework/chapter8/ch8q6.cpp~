@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+
+
+  int known = 35581;
+  int mod = 1440;
+  int result = 1;
+  int answer;
+  for(int i = 0; i < mod -1; i++)
+    {
+        answer = known * i;
+	if( (answer * known) % mod ==  result)
+	  break;
+    }
+  cout << answer;
+
+  return 0;
+}

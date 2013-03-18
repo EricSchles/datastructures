@@ -1,0 +1,45 @@
+/*
+Additional routines are required for the string class so that
+temporaries are not created with char * is involved.
+a. For the class interface presented in Figure 2.22, how
+many additional routines are needed?
+b.Implement some subset of these routines.
+
+*/
+
+
+
+#include <iostream>
+using namespace std;
+
+class STRING
+{
+
+public:
+  STRING( char ch );
+  STRING( const char *cstring = "");
+  STRING( const STRING & str );
+  ~STRING()
+  { delete [ ] buffer; }
+
+  const STRING & operator=( const STRING & rhs );
+  const STRING & operator+=( const STRING & rhs );
+
+  const char *c_str( ) const
+  { return buffer; }
+  
+
+
+
+
+int main()
+{
+
+
+
+
+
+
+
+  return 0;
+}

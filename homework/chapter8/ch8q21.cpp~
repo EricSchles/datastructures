@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void makeChange( const vector<int> & coins, int maxChange, vector<int> & coinsUsed, vector<int> & lastCoin)
+{
+
+  int differentCoins = coins.size();
+  coinsUsed.resize( maxChange + 1);
+  lastCoin.resize( maxChange + 1);
+
+  coinsUsed[ 0 ] = 0;
+  for( int cents = 1; cents <= maxChange; cents++ )
+    {
+
+      int minCoins = cents, newCoin = 1;
+      for( int j = 0; j < differentCoins; j++)
+	{
+	  if( coins[j] > coins)
+	    continue;
+	  if( coinsUsed[ cents - coins[ j ] ] + 1 < minCoins )
+	    {
+	      minCoins = coinsUsed[ cents - coins[j] ] + 1;
+	      newCoin = coins[j];
+	    }
+
+	}
+
+      coinsUsed[ cents ] = minCoins;
+      lastCoin[ cents ] = newCoin;
+
+    }
+
+}

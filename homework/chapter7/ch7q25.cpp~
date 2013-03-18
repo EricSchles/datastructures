@@ -1,0 +1,29 @@
+#include <vector>
+#include <iostream>
+using namespace std;
+
+template<class Object>
+class equal_to
+{
+
+public:
+  equal_to( Object thing): data(thing) { }
+  
+  operator() (Object x)
+  {
+    return x == data;
+  }
+private:
+  Object data;
+
+}
+
+
+template<class Object, class forwardItr, class Predicate>
+forwardItr adjacent_find( forwardItr begin, forwardItr end, Predicate pred = equal_to<Object> )
+{
+
+  
+
+
+}

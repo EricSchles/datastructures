@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+//returns the smaller of two objects
+template <class object>
+object min( object first, object second)
+{
+  object min = first;
+  if( first > second)
+    min = second;
+  return min;
+}
+
+//returns the bigger of two objects
+template <class object>
+object max(object first, object second)
+{
+  object max = first;
+  if( first < second)
+    max = second;
+  return max;
+}

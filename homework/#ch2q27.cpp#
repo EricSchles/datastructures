@@ -1,0 +1,40 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+class IntType
+{
+
+public:
+  operator+
+  operator-
+  operator/
+  operator*
+  operator() //change precedence
+  
+  //io things
+  
+  operator<<
+  operator>>
+  
+  operator-=
+  operator+=
+  operator*=
+  operator/=
+  
+  operator<
+  operator>
+  operator<=
+  operator>=
+
+  operator+
+  operator-
+
+  operator%
+ 
+private:
+
+  int data;
+
+};

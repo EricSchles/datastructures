@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+template <class object>
+class greater
+{
+
+  operator> (object lhs, object rhs)
+  {
+    return rhs < lhs;
+  }
+
+}
+
+
+
+
+int main()
+{
+  greater<int> check1 = 5;
+  greater<int> check2 = 6;
+  if( check2 > check1)
+    cout << "it worked";
+  else
+    cout << "it didnt";
+  return 0;
+}

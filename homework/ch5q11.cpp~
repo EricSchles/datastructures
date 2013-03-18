@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+template <class Comparable>
+class Pointer
+{
+public:
+  explicit Pointer( Comparable *rhs = NULL)
+    :pointee( rhs ) { }
+  bool operator<( const Pointer & rhs ) const
+  { return *pointee < *rhs.pointee; }
+  operator Comparable * ( ) const
+  { return pointee; }
+  operator * get( ) const
+  { return pointee; }
+  /* operator* const
+  { return *pointee; }
+  */
+
+
+
+private:
+  Comparable *pointee;
+};
+
+int main()
+{
+
+  Pointer first(1);
+
+  cout << first.get();
+
+
+  return 0;
+}

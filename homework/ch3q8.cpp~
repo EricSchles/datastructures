@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+template <class Comparable>
+void insertionSort( Comparable a[], int size)
+{
+
+  for(int p = 1; p < size; p++)
+    {
+
+      Comparable tmp = a[ p ];
+      int j;
+      
+      for( j = p; j > 0 && tmp < a[ j - 1]; j--)
+	a[ j ] = a[ j - 1 ];
+      a[ j ] = tmp;
+    }
+
+}

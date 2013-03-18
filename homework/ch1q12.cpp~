@@ -1,0 +1,26 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+using namespace std;
+
+int main(int argc, char *argv[ ])
+{
+
+  int word_count;
+  int character_count;
+  int line_count;
+  for(int i = 1; i < argc;i++)
+    {
+      ifstream myfile;
+      myfile.open( argv[ i ] );
+      if( !myfile.good( ))
+	{
+	  cout << "there was an error openning the file";
+	  exit(1);
+	}
+	  word_count = myfile 
+    }
+
+
+  return 0;
+}

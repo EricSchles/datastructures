@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+
+struct Node
+{
+  string item;
+  Node *next;
+
+};
+
+void printItem( string item);
+
+
+
+int main()
+{
+
+  string read_in = "start";  //initialize string
+  
+  //initialize linked list
+  Node *first,*last; 
+  
+  first  = new Node; //head
+  last = new Node; //does this do anything?
+
+  last = first->next; //join head and tail
+  
+  last->next = NULL; //tail
+
+  cout << " Please input a string\n";
+  cin >> read_in;
+  while( read_in != "final")
+    {
+      last->next = new Node;
+      last = last->next;
+      last->item = read_in;
+      last->next = NULL;
+      cout << "Please input another string (final to exit)\n";
+      cin >> read_in;
+    }
+
+  for(Node *p = first; p != NULL; p = p->next )
+    printItem( p->item );
+
+  return 0;
+
+}
+
+
+void printItem( string item)
+{
+
+  cout << item;
+
+}

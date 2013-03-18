@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+template<class object, class forwardItr>
+void fill(const object x, forwardItr begin, forwardItr end)
+{
+  typename Container::iterator itr;
+  for(itr = begin; itr < end; itr++)
+    {
+      *itr = x;
+    }
+
+}
+
+int main()
+{
+
+  vector<int> a;
+
+  for(int i = 0; i < 15; i++)
+    a.pus_back(i);
+
+
+  fill(4, a.begin(), a.end() );
+
+  for(k = 0; k < 15; k++)
+    cout << a[k] << " ";
+
+
+
+  return 0;
+}

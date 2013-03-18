@@ -1,0 +1,15 @@
+
+#include <iostream>
+using namespace std;
+
+
+int bitcount(int i){
+    int c=0;
+    
+    while(i>0){
+      int rem = i % 2;
+       c+=bitcount(rem);//as defined above
+       i=i/2;
+    }
+    return c;
+}
