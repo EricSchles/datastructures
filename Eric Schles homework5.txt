@@ -1,0 +1,126 @@
+﻿Homework 5
+By Eric Schles
+Question 1
+
+a)
+Create a method called CountNodesWithOneChild that returns the number of nodes in the tree having
+only one child.
+
+psuedo code:
+
+pass in root node to the method and a counter
+base case: if root->left node = NULL and root->right node = NULL:
+	 return 0
+else if root → left node = NULL or root → right node = NULL 
+	return counter +1
+if left node ! = NULL, set node = left node 
+if right node != NULL, set node = right node	
+
+b)
+
+pass in root node to the method
+base case: if root->left node = NULL and root->right node = NULL:
+	 do nothing
+else if root → left node = NULL or root → right node = NULL 
+	root → element = - (root → element)
+if left node ! = NULL,  root → element = - (root → element)
+if right node != NULL, root → element = - (root → element)
+
+c)
+
+pass in root node to the method
+base case: if root->left node = NULL and root->right node = NULL:
+	 sum = sum + root → element
+else if root → left node = NULL 
+	sum = sum + root → element
+	go to left node
+else if root → right node = NULL 
+	sum = sum + root-> element
+	go to right node
+else if root → right != NULL and root → left != NULL
+right_sum = sum + root → right → element
+left_sum = sum + root → left → element
+if left_sum < right_sum,  go to right node 
+if right_sum < left_sum, go to left node
+
+Question 2
+a) O(n log n)
+b) O(n)
+c) O(n log n)
+d) O(1)
+e) O(n log n)
+f) O(n)
+
+Question 3
+
+2^(h+1) - 1
+
+Question 4
+
+(2^h – 1) -h
+
+Question 5
+
+3, 1, 6, 0,2, 5, 7
+
+
+						     3
+					|			|
+					1			6
+				|		|	|		|
+				0		2	5		7
+		
+
+Question 6
+
+a)
+						      2
+					1			4
+							3		5
+								6		8
+									7
+b) 2, 1, 4, 5, 8, 3, 6, 7 
+c) 2, 1, 4, 3, 5, 6, 8, 7
+d) 7, 6, 8, 5,3, 4,1, 2
+
+Question 7
+						2-r
+					1-b		4-b
+						3-r		5-r
+							6-b		8-b
+								7-r		9-r
+
+
+Question 8
+
+8, 5 , - , 4, 3, +, *
+
+Question 9
+
+				25
+			12		53
+		4		46		67
+
+Question 11
+
+a)
+	0	1	2	3	4	5	6	7	8	9
+	6173	4371	9679	1323	4344					4199
+Remove 6173	
+	0	1	2	3	4	5	6	7	8	9
+		4371	9679	1323	4344					4199
+insert 3324
+	0	1	2	3	4	5	6	7	8	9
+	3324	4371	9679	1323	4344					4199
+
+b)
+	0	1	2	3	4	5	6	7	8	9
+		4371	9679	1323	4344					4199
+				6173
+Remove 6173
+		0	1	2	3	4	5	6	7	8	9
+			4371	9679	1323	4344					4199
+Insert
+0	1	2	3	4	5	6	7	8	9
+	4371	9679	1323	4344					4199
+				3324	

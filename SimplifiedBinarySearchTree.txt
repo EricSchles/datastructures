@@ -1,0 +1,102 @@
+template <class Comparable>
+class BinarySearchTree;
+
+template <class Comparable>
+class BinaryNode
+{
+    Comparable  element;
+    BinaryNode *left;
+    BinaryNode *right;
+    int size;
+	
+    BinaryNode( const Comparable & theElement, BinaryNode *lt,
+			   BinaryNode *rt, int sz = 1 )
+	: element( theElement ), left( lt ), right( rt ), size( sz ) { }	
+	
+    friend class BinarySearchTree<Comparable>;
+};
+
+
+// BinarySearchTree class
+//
+// CONSTRUCTION: with no parameters or another BinarySearchTree.
+//
+// ******************PUBLIC OPERATIONS*********************
+// void insert( x )       --> Insert x
+// bool isEmpty( )        --> Return true if empty; else false
+// void makeEmpty( )      --> Remove all items
+// ******************ERRORS********************************
+// Error messages are printed by insert if warranted
+
+template < class Comparable >
+class BinarySearchTree
+{
+public:
+	typedef BinaryNode<Comparable> Node;
+	
+	BinarySearchTree( ) : root( NULL ) { } // Construct the tree.
+	BinarySearchTree( const BinarySearchTree & rhs ) : root( NULL ) { *this = rhs; }// Copy constructor.
+	~BinarySearchTree( ){ makeEmpty( ); } // Destructor for the tree.
+	
+	// Test if the tree is logically empty.
+	// Return true if empty, false otherwise.	
+	bool isEmpty( ) const { return root == NULL;}
+	
+	// Make the tree logically empty.
+	void makeEmpty( )
+	{ makeEmpty( root ); }
+
+	// Insert x into the tree;
+	void insert( const Comparable & x )
+	{ insert( x, root ); }
+
+	//The four methods you will write
+	void printLevelOrder( );
+	void negateTree( );
+	int countOneChildNodes( );
+	int maxRootToLeafSum( );
+
+private:
+	Node * root;
+	
+	void insert( const Comparable & x, Node * & t ) const;
+	void makeEmpty( Node * & t ) const;
+};
+
+
+// Internal method to insert into a subtree.
+// x is the item to insert.
+// t is the node that roots the tree.
+// Set the new root.
+// Send error message if x is already in the tree.
+template <class Comparable>
+void BinarySearchTree<Comparable>::
+insert( const Comparable & x, Node * & t ) const
+{
+    if( t == NULL )
+        t = new Node( x, NULL, NULL, 0 );
+    else if( x < t->element )
+        insert( x, t->left );
+    else if( t->element < x )
+        insert( x, t->right );
+    else
+	{
+		cout << x << " has already been inserted." << endl;	
+		return;
+	}
+    t->size++;
+}
+
+
+// Internal method to make subtree empty.
+template <class Comparable>
+void BinarySearchTree<Comparable>::makeEmpty( Node * & t ) const
+{
+    if( t != NULL )
+    {
+        makeEmpty( t->left );
+        makeEmpty( t->right );
+        delete t;
+    }
+    t = NULL;
+}
